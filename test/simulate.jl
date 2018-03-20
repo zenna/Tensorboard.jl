@@ -1,32 +1,3 @@
-# Julia wrapper for Tensborboard
-
-[![Build Status](https://travis-ci.org/zenna/TensorboardX.jl.svg?branch=master)](https://travis-ci.org/zenna/TensorboardX.jl)
-
-[![codecov.io](http://codecov.io/github/zenna/TensorboardX.jl/coverage.svg?branch=master)](http://codecov.io/github/zenna/TensorboardX.jl?branch=master)
-
-## Installation 
-
-Install [TensorboardX](https://github.com/lanpa/tensorboard-pytorch):
-
-```python
-pip install tensorboardX
-```
-
-or build from source:
-
-```
-pip install git+https://github.com/lanpa/tensorboard-pytorch
-```
-
-Install TensorboardX.jl from a julia repl
-
-```julia
-Pkg.clone("https://github.com/zenna/TensorboardX.jl")
-```
-
-## Example Usage
-
-```julia
 using TensorboardX
 import MLDatasets: MNIST
 
@@ -75,18 +46,6 @@ label = labels[1:100]
 features = reshape(images, (100, 784))
 add_embedding!(writer, features, metadata=label, label_img=images)
 
-# export scalar data to JSON for external processing
-export_scalars_to_json(writer, "./all_scalars.json")
-close(writer)
-```
-
-## Running TensorBoard
-
-cd into the directory passed to SummaryWriter (by default this will be `runs`) and launch `tensorboard`
-
-```bash
-cd runs
-tensorboard --logdir=./
-```
-
-point your browser to the the address shown
+# # export scalar data to JSON for external processing
+# writer.export_scalars_to_json("./all_scalars.json")
+# close(writer)
