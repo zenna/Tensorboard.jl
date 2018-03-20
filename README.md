@@ -1,4 +1,4 @@
-# Julia wrapper for Tensborboard
+# Julia wrapper for TensorboardX
 
 [![Build Status](https://travis-ci.org/zenna/TensorboardX.jl.svg?branch=master)](https://travis-ci.org/zenna/TensorboardX.jl)
 
@@ -82,7 +82,7 @@ close(writer)
 
 ## Running TensorBoard
 
-cd into the directory passed to SummaryWriter (by default this will be `runs`) and launch `tensorboard`
+cd into the directory passed to `SummaryWriter` (by default this will be `runs`) and launch `tensorboard`
 
 ```bash
 cd runs
