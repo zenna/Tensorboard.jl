@@ -12,10 +12,11 @@ notifications:
 env:
   - DOCUMENTER_DEBUG="true" CONDA_JL_VERSION="2" PYTHON=""
 script:
-  - pip install git+https://github.com/lanpa/tensorboard-pytorch
+  - sudo pip install git+https://github.com/lanpa/tensorboard-pytorch
   - julia -e 'Pkg.clone("https://github.com/zenna/Spec.jl")'
   - julia -e 'Pkg.clone(pwd())'
   - julia -e 'Pkg.build("TensorboardX")'
+  - julia -e 'Pkg.update()'
   - julia -e 'Pkg.add(MLDatasets)'
   - julia -e 'Pkg.test("TensorboardX", coverage=true)'
 matrix:
