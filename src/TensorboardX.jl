@@ -1,4 +1,3 @@
-__precompile__()
 "Wrapper of TensorboardX"
 module TensorboardX
 using PyCall
@@ -20,7 +19,6 @@ add_image!(s::SummaryWriter, args...; kwargs...) = s.pyobj["add_image"](args...;
 add_audio!(s::SummaryWriter, args...; kwargs...) = s.pyobj["add_audio"](args...; kwargs...)
 add_pr_curve!(s::SummaryWriter, args...; kwargs...) = s.pyobj["add_pr_curve"](args...; kwargs...)
 add_embedding!(s::SummaryWriter, args...; kwargs...) = s.pyobj["add_embedding"](args...; kwargs...)
-close!(s::SummaryWriter, args...; kwargs...) = s.pyobj["close"](args...; kwargs...)
 Base.close(s::SummaryWriter, args...; kwargs...) = s.pyobj["close"](args...; kwargs...)
 export_scalars_to_json(s::SummaryWriter, args...; kwargs...) = s.pyobj["export_scalars_to_json"](args...; kwargs...)
 
