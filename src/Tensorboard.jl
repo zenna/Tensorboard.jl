@@ -1,5 +1,5 @@
 "Wrapper of TensorboardX"
-module TensorboardX
+module Tensorboard
 using PyCall
 @pyimport tensorboardX
 

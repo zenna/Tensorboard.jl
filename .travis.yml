@@ -6,6 +6,7 @@ os:
   - osx
 julia:
   - 0.6
+  - 0.7
   - nightly
 notifications:
   email: false
@@ -14,12 +15,11 @@ env:
 script:
   # - sudo pip install git+https://github.com/lanpa/tensorboard-pytorch
   - julia -e 'Pkg.add("Conda"); using Conda; Conda.add("tensorboardX")'
-  - julia -e 'Pkg.clone("https://github.com/zenna/Spec.jl")'
-  - julia -e 'Pkg.clone(pwd())'
-  - julia -e 'Pkg.build("TensorboardX")'
+  - julia -e 'Pkg.build("Tensorboard")'
   - julia -e 'Pkg.update()'
   - julia -e 'Pkg.add("MLDatasets")'
-  - julia -e 'Pkg.test("TensorboardX", coverage=true)'
+  - julia -e 'Pkg.add("Tests")'
+  - julia -e 'Pkg.test("Tensorboard", coverage=true)'
 matrix:
   fast_finish: true
   allow_failures:

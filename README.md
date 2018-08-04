@@ -4,6 +4,13 @@
 
 [![codecov.io](http://codecov.io/github/zenna/TensorboardX.jl/coverage.svg?branch=master)](http://codecov.io/github/zenna/TensorboardX.jl?branch=master)
 
+Tensorboard.jl is an interface to Tensorflow's Tensorboard.
+Currently it is implemented as a wrapper over the Python library tensorboardX.
+
+## Limitations
+
+`add_image!` does not work, since it expects a PyTorch Tensor and not a numpy array, PRs are welcome!
+
 ## Installation 
 
 Install [TensorboardX](https://github.com/lanpa/tensorboard-pytorch):
