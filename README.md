@@ -1,8 +1,8 @@
-# Julia wrapper for TensorboardX
+# Julia wrapper for Tensorboard
 
-[![Build Status](https://travis-ci.org/zenna/TensorboardX.jl.svg?branch=master)](https://travis-ci.org/zenna/TensorboardX.jl)
+[![Build Status](https://travis-ci.org/zenna/Tensorboard.jl.svg?branch=master)](https://travis-ci.org/zenna/Tensorboard.jl)
 
-[![codecov.io](http://codecov.io/github/zenna/TensorboardX.jl/coverage.svg?branch=master)](http://codecov.io/github/zenna/TensorboardX.jl?branch=master)
+[![codecov.io](http://codecov.io/github/zenna/Tensorboard.jl/coverage.svg?branch=master)](http://codecov.io/github/zenna/Tensorboard.jl?branch=master)
 
 Tensorboard.jl is an interface to Tensorflow's Tensorboard.
 Currently it is implemented as a wrapper over the Python library tensorboardX.
@@ -25,7 +25,7 @@ or build from source:
 pip install git+https://github.com/lanpa/tensorboard-pytorch
 ```
 
-Install TensorboardX.jl from a julia repl
+Install Tensorboard.jl from a julia repl
 
 ```julia
 Pkg.clone("https://github.com/zenna/TensorboardX.jl")

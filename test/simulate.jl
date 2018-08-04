@@ -1,4 +1,4 @@
-using TensorboardX
+using Tensorboard
 import MLDatasets: MNIST
 
 writer = SummaryWriter()
