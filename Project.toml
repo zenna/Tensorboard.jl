@@ -1,0 +1,7 @@
+name = "Tensorboard"
+uuid = "0b0dfcba-97db-11e8-112a-b5f40c7258d9"
+authors = ["Zenna Tavares <zennatavares@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+PyCall = "438e738f-606a-5dbb-bf0a-cddfbfd45ab0"
