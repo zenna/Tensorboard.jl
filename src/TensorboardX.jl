@@ -1,3 +1,4 @@
+__precompile__(false)
 "Wrapper of TensorboardX"
 module TensorboardX
 using PyCall
