@@ -23,7 +23,7 @@ for n_iter = 1:100
   dummy_img = rand(3, 64, 64)
   if n_iter % 10 == 0
     # x = vutils.make_grid(dummy_img, normalize=true, scale_each=true)
-    # add_image!(writer, "Image", dummy_img, n_iter)
+    add_image!(writer, "Image", dummy_img, n_iter)
     dummy_audio = [cos(freqs[div(n_iter, 10)] * pi * i / sample_rate) for i = 1:sample_rate * 2]
     
     add_audio!(writer, "myAudio", dummy_audio, n_iter, sample_rate=sample_rate)
@@ -44,8 +44,10 @@ images = float(permutedims(dataset[:, :, 1:100], (3, 1, 2)))
 images = reshape(images, (100, 1, 28, 28))
 label = labels[1:100]
 features = reshape(images, (100, 784))
-add_embedding!(writer, features, metadata=label, label_img=images)
 
-# # export scalar data to JSON for external processing
-# writer.export_scalars_to_json("./all_scalars.json")
-# close(writer)
+# Not yet supported
+# add_embedding!(writer, features, metadata=label, label_img=images)
+
+# export scalar data to JSON for external processing
+export_scalars_to_json(writer, "./all_scalars.json")
+close(writer)

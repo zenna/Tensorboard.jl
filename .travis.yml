@@ -19,7 +19,6 @@ script:
   - julia -e 'Pkg.build("Tensorboard")'
   - julia -e 'Pkg.update()'
   - julia -e 'Pkg.add("MLDatasets")'
-  - julia -e 'Pkg.add("Tests")'
   - julia -e 'Pkg.test("Tensorboard", coverage=true)'
 matrix:
   fast_finish: true
