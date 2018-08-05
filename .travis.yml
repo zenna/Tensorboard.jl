@@ -10,10 +10,12 @@ julia:
   - nightly
 notifications:
   email: false
-env:
-  - DOCUMENTER_DEBUG="true" CONDA_JL_VERSION="2" PYTHON=""
+# env:
+#   - PYTHON=""
+before_install:
+   - (sudo apt-get -qq update && sudo apt-get install -y python python-pip && sudo pip install git+https://github.com/lanpa/tensorboard-pytorch)
 script:
-  # - sudo pip install git+https://github.com/lanpa/tensorboard-pytorch
+  - julia -e 'Pkg.clone(pwd())'
   - julia -e 'Pkg.add("Conda"); using Conda; Conda.add("tensorboardX")'
   - julia -e 'Pkg.build("Tensorboard")'
   - julia -e 'Pkg.update()'

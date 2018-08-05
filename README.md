@@ -28,13 +28,13 @@ pip install git+https://github.com/lanpa/tensorboard-pytorch
 Install Tensorboard.jl from a julia repl
 
 ```julia
-Pkg.clone("https://github.com/zenna/TensorboardX.jl")
+Pkg.clone("https://github.com/zenna/Tensorboard.jl")
 ```
 
 ## Example Usage
 
 ```julia
-using TensorboardX
+using Tensorboard
 import MLDatasets: MNIST
 
 writer = SummaryWriter()
