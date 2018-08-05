@@ -1,5 +1,4 @@
 using Tensorboard
-import MLDatasets: MNIST
 
 writer = SummaryWriter()
 sample_rate = 44100
@@ -39,11 +38,12 @@ for n_iter = 1:100
   end
 end
 
-dataset, labels = MNIST.traindata()
-images = float(permutedims(dataset[:, :, 1:100], (3, 1, 2)))
-images = reshape(images, (100, 1, 28, 28))
-label = labels[1:100]
-features = reshape(images, (100, 784))
+# import MLDatasets: MNIST
+# dataset, labels = MNIST.traindata()
+# images = float(permutedims(dataset[:, :, 1:100], (3, 1, 2)))
+# images = reshape(images, (100, 1, 28, 28))
+# label = labels[1:100]
+# features = reshape(images, (100, 784))
 
 # Not yet supported
 # add_embedding!(writer, features, metadata=label, label_img=images)
