@@ -16,7 +16,6 @@ before_install:
    - (sudo apt-get -qq update && sudo apt-get install -y python python-pip && sudo pip install git+https://github.com/lanpa/tensorboard-pytorch)
 script:
   - julia -e 'Pkg.clone(pwd())'
-  - julia -e 'Pkg.add("Conda"); using Conda; Conda.add("tensorboardX")'
   - julia -e 'Pkg.build("Tensorboard")'
   - julia -e 'Pkg.update()'
   - julia -e 'Pkg.add("MLDatasets")'
