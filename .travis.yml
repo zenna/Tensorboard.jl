@@ -13,7 +13,7 @@ notifications:
 # env:
 #   - PYTHON=""
 before_install:
-   - (sudo apt-get -qq update && sudo apt-get install -y python python-pip && sudo pip install matplotlib && sudo pip install git+https://github.com/lanpa/tensorboard-pytorch)
+   - (sudo apt-get -qq update && sudo apt-get install -y python python-pip && sudo pip install image && sudo pip install git+https://github.com/lanpa/tensorboard-pytorch)
 script:
   - julia -e 'Pkg.clone(pwd())'
   - julia -e 'Pkg.build("Tensorboard")'
